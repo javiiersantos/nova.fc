@@ -178,6 +178,11 @@ nav { background:rgba(11,21,48,0.97); border-bottom:1.5px solid var(--gold); dis
 .juego-status.proximo { color:var(--gold2); }
 .juego-status.vivo { color:var(--o); }
 .juego-datetime { font-size:11px; color:rgba(255,255,255,0.35); text-align:center; margin-top:10px; }
+.jornada-tabs { display:flex; gap:6px; margin-left:auto; }
+.jornada-tab { background:transparent; border:1.5px solid rgba(255,255,255,0.5); color:rgba(255,255,255,0.7); font-family:'Barlow',sans-serif; font-size:12px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; border-radius:40px; padding:6px 16px; cursor:pointer; transition:all 0.2s; }
+.jornada-tab.active, .jornada-tab:hover { background:var(--gold); border-color:var(--gold); color:var(--navy); }
+.jornada-panel { display:flex; flex-direction:column; gap:10px; }
+.jornada-panel[hidden] { display:none; }
 
 /* IFRAME */
 .unete-section { background:linear-gradient(160deg,#060c20,#0f1e3d); border-top:1px solid rgba(255,255,255,0.04); }
@@ -503,12 +508,14 @@ footer { background:#040912; border-top:3px solid var(--gold); padding:36px 20px
         <select class="juegos-select">
           <option>Copa del Orgullo</option>
         </select>
-        <select class="juegos-select">
-          <option>Jornada 1</option>
-        </select>
+        <div class="jornada-tabs">
+          <button class="jornada-tab active" onclick="showJornada('jornada-1',this)">Jornada 1</button>
+          <button class="jornada-tab" onclick="showJornada('jornada-2',this)">Jornada 2</button>
+        </div>
       </div>
 
       <div class="juegos-body">
+        <div id="jornada-1" class="jornada-panel">
 
         <div class="juego-row">
           <div class="juego-teams">
@@ -610,6 +617,9 @@ footer { background:#040912; border-top:3px solid var(--gold); padding:36px 20px
           <div class="juego-datetime">sáb, 18/4/2026 13:00</div>
         </div>
 
+        </div><!-- /jornada-1 -->
+        <div id="jornada-2" class="jornada-panel" hidden>
+
         <div class="juego-row">
           <div class="juego-teams">
             <div class="juego-team">
@@ -629,6 +639,8 @@ footer { background:#040912; border-top:3px solid var(--gold); padding:36px 20px
           </div>
           <div class="juego-datetime">sáb, 25/4/2026 11:00</div>
         </div>
+
+        </div><!-- /jornada-2 -->
 
       </div>
     </div>
@@ -712,6 +724,12 @@ const toggle=document.getElementById('navToggle');
 const menu=document.getElementById('navMenu');
 toggle.addEventListener('click',()=>menu.classList.toggle('open'));
 function closeMenu(){ menu.classList.remove('open'); }
+function showJornada(id, btn) {
+  document.querySelectorAll('.jornada-panel').forEach(p => p.hidden = true);
+  document.getElementById(id).hidden = false;
+  document.querySelectorAll('.jornada-tab').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+}
 </script>
 </body>
 </html>
