@@ -55,6 +55,16 @@ nav { background:rgba(11,21,48,0.97); border-bottom:1.5px solid var(--gold); dis
 .sec-title { font-family:'Bebas Neue',sans-serif; font-size:clamp(36px,8vw,64px); letter-spacing:0.03em; line-height:1; color:var(--white); margin-bottom:12px; }
 .sec-title em { color:var(--gold2); font-style:normal; }
 
+/* CONSTELACION */
+.constelacion-bg { background:var(--navy); border-top:1px solid rgba(201,162,39,0.15); }
+.constelacion-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:24px; margin-top:36px; }
+.constelacion-card { background:linear-gradient(145deg,rgba(22,45,92,0.6),rgba(11,21,48,0.9)); border:1px solid rgba(201,162,39,0.25); border-radius:16px; padding:28px 24px; position:relative; overflow:hidden; transition:all 0.3s; }
+.constelacion-card::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(90deg,var(--gold),var(--gold2),var(--gold3)); }
+.constelacion-card:hover { transform:translateY(-4px); border-color:rgba(201,162,39,0.5); box-shadow:0 8px 32px rgba(201,162,39,0.12); }
+.constelacion-icon { font-size:34px; margin-bottom:14px; }
+.constelacion-titulo { font-family:'Bebas Neue',sans-serif; font-size:30px; letter-spacing:0.06em; color:var(--gold2); margin-bottom:12px; }
+.constelacion-texto { font-size:14px; color:rgba(255,255,255,0.7); line-height:1.8; }
+
 .manifesto-bg { background:linear-gradient(135deg, rgba(74,42,138,0.25), rgba(11,21,48,0.9)); border-top:1px solid rgba(201,162,39,0.2); border-bottom:1px solid rgba(201,162,39,0.2); }
 .manifesto-inner { max-width:700px; margin:0 auto; text-align:center; padding:60px 20px; }
 .manifesto-shield { width:clamp(90px,22vw,130px); margin-bottom:20px; filter:drop-shadow(0 0 16px rgba(201,162,39,0.4)); }
@@ -146,27 +156,28 @@ nav { background:rgba(11,21,48,0.97); border-bottom:1.5px solid var(--gold); dis
 
 /* JUEGOS */
 .juegos-section { background:var(--navy2); }
-.juegos-header { display:flex; align-items:center; gap:10px; background:var(--r); border-radius:14px 14px 0 0; padding:14px 20px; flex-wrap:wrap; }
+.juegos-header { display:flex; align-items:center; gap:10px; background:linear-gradient(135deg, var(--navy), var(--blue)); border-radius:14px 14px 0 0; padding:14px 20px; flex-wrap:wrap; border-bottom:2px solid var(--gold); }
 .juegos-header-title { font-family:'Bebas Neue',sans-serif; font-size:22px; letter-spacing:0.1em; color:var(--white); margin-right:6px; }
 .juegos-select { background:transparent; border:2px solid rgba(255,255,255,0.8); color:var(--white); font-family:'Barlow',sans-serif; font-size:12px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; border-radius:40px; padding:6px 28px 6px 14px; cursor:pointer; appearance:none; -webkit-appearance:none; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='white'/%3E%3C/svg%3E"); background-repeat:no-repeat; background-position:right 10px center; }
 .juegos-select:focus { outline:none; border-color:var(--white); }
 .juegos-select option { background:var(--navy); color:var(--white); }
-.juegos-body { background:#f0f2f5; border-radius:0 0 14px 14px; overflow:hidden; }
-.juego-row { display:flex; flex-direction:column; background:#fff; border-bottom:1px solid #e0e4ea; padding:20px 16px 14px; }
-.juego-row:last-child { border-bottom:none; }
+.juegos-body { background:var(--navy); border-radius:0 0 14px 14px; padding:12px; display:flex; flex-direction:column; gap:10px; }
+.juego-row { display:flex; flex-direction:column; background:linear-gradient(135deg, rgba(74,42,138,0.35), rgba(11,21,48,0.95)); border:1.5px solid rgba(201,162,39,0.4); border-radius:12px; padding:18px 16px 14px; position:relative; overflow:hidden; transition:all 0.3s; }
+.juego-row::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(90deg,#e53935,#fb8c00,#fdd835,#43a047,#1e88e5,#8e24aa); }
+.juego-row:hover { border-color:var(--gold2); transform:translateY(-2px); box-shadow:0 6px 24px rgba(201,162,39,0.15); }
 .juego-teams { display:flex; align-items:center; justify-content:space-between; gap:8px; }
 .juego-team { display:flex; flex-direction:column; align-items:center; gap:8px; width:36%; }
-.juego-team-logo { width:54px; height:54px; border-radius:8px; background:#f5f5f5; border:1px solid #e0e0e0; display:flex; align-items:center; justify-content:center; font-family:'Bebas Neue',sans-serif; font-size:18px; color:var(--navy); font-weight:900; overflow:hidden; flex-shrink:0; }
+.juego-team-logo { width:54px; height:54px; border-radius:8px; background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.15); display:flex; align-items:center; justify-content:center; font-family:'Bebas Neue',sans-serif; font-size:18px; color:var(--gold2); font-weight:900; overflow:hidden; flex-shrink:0; }
 .juego-team-logo img { width:100%; height:100%; object-fit:contain; }
-.juego-team-name { font-family:'Barlow Condensed',sans-serif; font-size:12px; font-weight:700; letter-spacing:0.04em; text-transform:uppercase; color:#1a2540; text-align:center; line-height:1.3; }
+.juego-team-name { font-family:'Barlow Condensed',sans-serif; font-size:12px; font-weight:700; letter-spacing:0.04em; text-transform:uppercase; color:rgba(255,255,255,0.85); text-align:center; line-height:1.3; }
 .juego-score-wrap { display:flex; flex-direction:column; align-items:center; gap:6px; flex-shrink:0; }
-.juego-score-box { background:#fff; border:1.5px solid #d0d5e0; border-radius:8px; padding:10px 18px; text-align:center; min-width:90px; }
-.juego-score { font-family:'Bebas Neue',sans-serif; font-size:28px; letter-spacing:0.1em; color:#1a2540; line-height:1; }
-.juego-status { font-size:10px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:#6b7a99; margin-top:4px; }
-.juego-status.finalizado { color:#43a047; }
-.juego-status.proximo { color:var(--r); }
+.juego-score-box { background:rgba(11,21,48,0.8); border:1.5px solid rgba(201,162,39,0.4); border-radius:8px; padding:10px 18px; text-align:center; min-width:90px; }
+.juego-score { font-family:'Bebas Neue',sans-serif; font-size:28px; letter-spacing:0.1em; color:var(--gold2); line-height:1; }
+.juego-status { font-size:10px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:rgba(255,255,255,0.45); margin-top:4px; }
+.juego-status.finalizado { color:#66bb6a; }
+.juego-status.proximo { color:var(--gold2); }
 .juego-status.vivo { color:var(--o); }
-.juego-datetime { font-size:11px; color:#8a9ab5; text-align:center; margin-top:10px; }
+.juego-datetime { font-size:11px; color:rgba(255,255,255,0.35); text-align:center; margin-top:10px; }
 
 /* IFRAME */
 .unete-section { background:linear-gradient(160deg,#060c20,#0f1e3d); border-top:1px solid rgba(255,255,255,0.04); }
@@ -241,6 +252,7 @@ footer { background:#040912; border-top:3px solid var(--gold); padding:36px 20px
   <div class="nav-menu" id="navMenu">
     <ul class="nav-links">
       <li><a href="#inicio" onclick="closeMenu()">Inicio</a></li>
+      <li><a href="#constelacion" onclick="closeMenu()">Constelación</a></li>
       <li><a href="#equipo" onclick="closeMenu()">Equipo</a></li>
       <li><a href="#partidos" onclick="closeMenu()">Partidos</a></li>
       <li><a href="#juegos" onclick="closeMenu()">Juegos</a></li>
@@ -269,6 +281,31 @@ footer { background:#040912; border-top:3px solid var(--gold); padding:36px 20px
   <div class="hero-btns">
     <a href="#unete" class="btn btn-gold">Únete al equipo</a>
     <a href="#partidos" class="btn btn-ghost">Ver partidos</a>
+  </div>
+</div>
+
+<div class="gold-divider"></div>
+
+<!-- CONSTELACION -->
+<div class="constelacion-bg" id="constelacion">
+  <div class="section">
+    <div class="sec-label">Identidad del equipo</div>
+    <h2 class="sec-title">Nuestra <em>Constelación</em></h2>
+    <div class="constelacion-grid">
+
+      <div class="constelacion-card">
+        <div class="constelacion-icon">🎯</div>
+        <div class="constelacion-titulo">Misión</div>
+        <p class="constelacion-texto">Brindar un espacio deportivo seguro, inclusivo y libre de prejuicios, donde las personas de la comunidad LGBT+ encuentren en el fútbol una herramienta para su desarrollo integral. En Nova, transformamos la cancha en un punto de encuentro para fortalecer la salud física, el bienestar emocional y el sentido de pertenencia, siempre bajo los valores del respeto, la disciplina y la unión colectiva.</p>
+      </div>
+
+      <div class="constelacion-card">
+        <div class="constelacion-icon">⭐</div>
+        <div class="constelacion-titulo">Visión</div>
+        <p class="constelacion-texto">Consolidar a Nova como un referente de excelencia deportiva y compromiso social, siendo el equipo que rompa barreras dentro y fuera del campo. Aspiramos a ser una comunidad vibrante que inspire el cambio, demostrando que el deporte es un lenguaje universal capaz de generar visibilidad, orgullo e impacto positivo en la sociedad.</p>
+      </div>
+
+    </div>
   </div>
 </div>
 
@@ -418,7 +455,7 @@ footer { background:#040912; border-top:3px solid var(--gold); padding:36px 20px
             <div class="mundial-mon">Abr · 2026</div>
           </div>
           <div class="mundial-info">
-            <div class="mundial-title">🌍 Participación <em>Mundialito 2026</em></div>
+            <div class="mundial-title">🌍 Copa del Orgullo CDMX 2026 <em>rumbo al Mundialito</em></div>
             <div class="mundial-sub">📍 Ciudad de México · Más información próximamente</div>
             <span class="mundial-badge">🏆 Evento especial</span>
           </div>
@@ -441,7 +478,7 @@ footer { background:#040912; border-top:3px solid var(--gold); padding:36px 20px
           <div class="mundial-info">
             <div class="mundial-title" style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;">
               <img src="https://copafacil-storage.b-cdn.net/events%2F-r7uel%2Fteams%2F-Oq8NMK9bst4iFYJOFUE.jpg?alt=media&token=1" alt="Iztapalapa" style="width:36px;height:36px;object-fit:contain;border-radius:4px;">
-              Iztapalapa <em>vs</em> Álvaro Obregón
+              Iztapalapa <em>vs</em> NOVA AO
               <img src="https://copafacil-storage.b-cdn.net/events%2F-r7uel%2Fteams%2F-Oq8N-glOKbGVN7c1Kqr.jpg?alt=media&token=1" alt="Álvaro Obregón" style="width:36px;height:36px;object-fit:contain;border-radius:4px;">
             </div>
             <div class="mundial-sub">⏰ Sábado 25 de abril · 11:00 hrs</div>
