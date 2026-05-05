@@ -851,6 +851,14 @@ document.addEventListener('DOMContentLoaded', () => {
     el.addEventListener('dragstart', e => e.preventDefault());
   });
   document.getElementById('lightbox').addEventListener('contextmenu', e => e.preventDefault());
+
+  document.addEventListener('click', e => {
+    const foto = e.target.closest('.copa-foto');
+    if (foto) {
+      const img = foto.querySelector('img');
+      if (img) openLightbox(img.src);
+    }
+  });
 });
 </script>
 
