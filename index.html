@@ -257,7 +257,10 @@ footer { background:#040912; border-top:3px solid var(--gold); padding:36px 20px
 .copa-portada{width:100%;border-radius:12px;overflow:hidden;margin-bottom:20px;border:2px solid rgba(201,162,39,0.3);box-shadow:0 0 40px rgba(0,0,0,0.4);cursor:pointer;}
 .copa-portada img{width:100%;height:380px;object-fit:cover;display:block;transition:transform 0.4s;}
 .copa-portada:hover img{transform:scale(1.02);}
-.copa-foto{cursor:pointer;}
+.copa-foto{cursor:pointer;position:relative;user-select:none;}
+.copa-foto::after{content:'';position:absolute;inset:0;z-index:1;}
+.copa-foto img{pointer-events:none;}
+.lightbox-img{pointer-events:none;user-select:none;}
 .lightbox{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.93);z-index:9999;align-items:center;justify-content:center;padding:20px;}
 .lightbox.open{display:flex;}
 .lightbox-img{max-width:90vw;max-height:88vh;object-fit:contain;border-radius:8px;box-shadow:0 0 60px rgba(0,0,0,0.6);}
@@ -842,6 +845,13 @@ function closeLightbox() {
   document.body.style.overflow = '';
 }
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.copa-foto, .lightbox-img, .copa-portada').forEach(el => {
+    el.addEventListener('contextmenu', e => e.preventDefault());
+    el.addEventListener('dragstart', e => e.preventDefault());
+  });
+  document.getElementById('lightbox').addEventListener('contextmenu', e => e.preventDefault());
+});
 </script>
 
 <div class="lightbox" id="lightbox" onclick="if(event.target===this)closeLightbox()">
