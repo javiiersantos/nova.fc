@@ -99,7 +99,8 @@ nav { background:rgba(11,21,48,0.97); border-bottom:1.5px solid var(--gold); dis
 .jug-card.reveal { border-color:rgba(255,255,255,0.1); opacity:0.6; }
 .jug-card.reveal::before { background:rgba(255,255,255,0.1); }
 .jug-card:hover { transform:translateY(-5px); border-color:var(--gold); opacity:1; }
-.jug-avatar { width:52px; height:52px; border-radius:50%; margin:0 auto 8px; display:flex; align-items:center; justify-content:center; font-family:'Bebas Neue',sans-serif; font-size:18px; color:var(--navy); border:2px solid var(--gold); }
+.jug-avatar { width:52px; height:52px; border-radius:50%; margin:0 auto 8px; display:flex; align-items:center; justify-content:center; font-family:'Bebas Neue',sans-serif; font-size:18px; color:var(--navy); border:2px solid var(--gold); overflow:hidden; }
+.jug-avatar img { width:100%; height:100%; object-fit:cover; border-radius:50%; }
 .jug-name { font-weight:700; font-size:13px; color:var(--white); margin-bottom:3px; }
 .jug-pos { font-size:10px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--gold); opacity:0.85; }
 
@@ -109,10 +110,11 @@ nav { background:rgba(11,21,48,0.97); border-bottom:1.5px solid var(--gold); dis
 .dir-card { background:linear-gradient(145deg,rgba(74,42,138,0.25),rgba(11,21,48,0.9)); border:1px solid rgba(201,162,39,0.3); border-radius:16px; padding:28px 24px; position:relative; overflow:hidden; transition:all 0.3s; }
 .dir-card::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(90deg,var(--gold),var(--gold2)); }
 .dir-card:hover { transform:translateY(-4px); border-color:rgba(201,162,39,0.6); }
-.dir-avatar { width:70px; height:70px; border-radius:50%; margin:0 auto 14px; display:flex; align-items:center; justify-content:center; font-family:'Bebas Neue',sans-serif; font-size:26px; color:var(--navy); background:linear-gradient(135deg,var(--gold),var(--gold2)); border:3px solid rgba(255,255,255,0.15); }
+.dir-avatar { width:70px; height:70px; border-radius:50%; margin:0 auto 14px; display:flex; align-items:center; justify-content:center; font-family:'Bebas Neue',sans-serif; font-size:26px; color:var(--navy); background:linear-gradient(135deg,var(--gold),var(--gold2)); border:3px solid rgba(255,255,255,0.15); overflow:hidden; }
+.dir-avatar img { width:100%; height:100%; object-fit:cover; border-radius:50%; }
 .dir-name { font-family:'Bebas Neue',sans-serif; font-size:22px; letter-spacing:0.06em; color:var(--gold2); text-align:center; margin-bottom:4px; }
 .dir-rol { font-size:11px; font-weight:700; letter-spacing:0.15em; text-transform:uppercase; color:var(--gold); opacity:0.7; text-align:center; margin-bottom:14px; }
-.dir-bio { font-size:13px; color:rgba(255,255,255,0.35); line-height:1.6; text-align:center; font-style:italic; border-top:1px solid rgba(201,162,39,0.15); padding-top:12px; }
+.dir-bio { font-size:13px; color:rgba(255,255,255,0.65); line-height:1.6; text-align:center; font-style:italic; border-top:1px solid rgba(201,162,39,0.15); padding-top:12px; }
 
 /* PARTIDOS */
 .partidos-section { background:var(--navy); }
@@ -484,17 +486,17 @@ footer { background:#040912; border-top:3px solid var(--gold); padding:36px 20px
     <p class="equipo-subtitle">⭐ Mesa Directiva</p>
     <div class="jugadores-grid">
       <div class="jug-card directiva-member">
-        <div class="jug-avatar" style="background:linear-gradient(135deg,var(--gold),var(--gold2))">AS</div>
+        <div class="jug-avatar"><img src="fotos/Equipo/Alex.jpeg" alt="Alejandro Sánchez" class="foto-ampliable" style="cursor:pointer"></div>
         <div class="jug-name">Alejandro Sánchez</div>
         <div class="jug-pos">Directivo</div>
       </div>
       <div class="jug-card directiva-member">
-        <div class="jug-avatar" style="background:linear-gradient(135deg,var(--gold),var(--gold2))">JS</div>
+        <div class="jug-avatar"><img src="fotos/Equipo/Javi.jpeg" alt="Javier Santos" class="foto-ampliable" style="cursor:pointer"></div>
         <div class="jug-name">Javier Santos</div>
         <div class="jug-pos">Directivo</div>
       </div>
       <div class="jug-card directiva-member">
-        <div class="jug-avatar" style="background:linear-gradient(135deg,var(--gold),var(--gold2))">LM</div>
+        <div class="jug-avatar"><img src="fotos/Equipo/Leo.jpg" alt="Leonardo Mora" class="foto-ampliable" style="cursor:pointer"></div>
         <div class="jug-name">Leonardo Mora</div>
         <div class="jug-pos">Directivo</div>
       </div>
@@ -502,20 +504,20 @@ footer { background:#040912; border-top:3px solid var(--gold); padding:36px 20px
 
     <p class="equipo-subtitle" style="margin-top:36px">⚽ Jugadores</p>
     <div class="jugadores-grid">
-      <div class="jug-card reveal">
-        <div class="jug-avatar" style="background:rgba(255,255,255,0.08);border-color:rgba(255,255,255,0.2)">?</div>
-        <div class="jug-name" style="color:rgba(255,255,255,0.4)">Por revelar</div>
-        <div class="jug-pos" style="opacity:0.3">Próximamente</div>
+      <div class="jug-card">
+        <div class="jug-avatar"><img src="fotos/Equipo/Jenni.jpeg" alt="Jenni" class="foto-ampliable" style="cursor:pointer"></div>
+        <div class="jug-name">Jenni</div>
+        <div class="jug-pos">Jugadora</div>
       </div>
-      <div class="jug-card reveal">
-        <div class="jug-avatar" style="background:rgba(255,255,255,0.08);border-color:rgba(255,255,255,0.2)">?</div>
-        <div class="jug-name" style="color:rgba(255,255,255,0.4)">Por revelar</div>
-        <div class="jug-pos" style="opacity:0.3">Próximamente</div>
+      <div class="jug-card">
+        <div class="jug-avatar"><img src="fotos/Equipo/Xochitl.jpeg" alt="Xochitl" class="foto-ampliable" style="cursor:pointer"></div>
+        <div class="jug-name">Xochitl</div>
+        <div class="jug-pos">Jugadora</div>
       </div>
-      <div class="jug-card reveal">
-        <div class="jug-avatar" style="background:rgba(255,255,255,0.08);border-color:rgba(255,255,255,0.2)">?</div>
-        <div class="jug-name" style="color:rgba(255,255,255,0.4)">Por revelar</div>
-        <div class="jug-pos" style="opacity:0.3">Próximamente</div>
+      <div class="jug-card">
+        <div class="jug-avatar"><img src="fotos/Equipo/Uli.jpeg" alt="Uli" class="foto-ampliable" style="cursor:pointer"></div>
+        <div class="jug-name">Uli</div>
+        <div class="jug-pos">Jugador</div>
       </div>
       <div class="jug-card reveal">
         <div class="jug-avatar" style="background:rgba(255,255,255,0.08);border-color:rgba(255,255,255,0.2)">?</div>
@@ -538,22 +540,22 @@ footer { background:#040912; border-top:3px solid var(--gold); padding:36px 20px
     <h2 class="sec-title">Mesa <em>Directiva</em></h2>
     <div class="directiva-grid">
       <div class="dir-card">
-        <div class="dir-avatar">AS</div>
+        <div class="dir-avatar"><img src="fotos/Equipo/Alex.jpeg" alt="Alejandro Sánchez" class="foto-ampliable" style="cursor:pointer"></div>
         <div class="dir-name">Alejandro Sánchez</div>
         <div class="dir-rol">Directivo</div>
-        <div class="dir-bio">Descripción próximamente…</div>
+        <div class="dir-bio">Comunicólogo y fotógrafo de profesión, apasionado por el deporte como herramienta de transformación social.</div>
       </div>
       <div class="dir-card">
-        <div class="dir-avatar">JS</div>
+        <div class="dir-avatar"><img src="fotos/Equipo/Javi.jpeg" alt="Javier Santos" class="foto-ampliable" style="cursor:pointer"></div>
         <div class="dir-name">Javier Santos</div>
         <div class="dir-rol">Directivo</div>
-        <div class="dir-bio">Descripción próximamente…</div>
+        <div class="dir-bio">Ingeniero en la práctica, viajero de alma y corazón, apasionado de los deportes. Vivo para desafiar las reglas y romper paradigmas.</div>
       </div>
       <div class="dir-card">
-        <div class="dir-avatar">LM</div>
+        <div class="dir-avatar"><img src="fotos/Equipo/Leo.jpg" alt="Leonardo Mora" class="foto-ampliable" style="cursor:pointer"></div>
         <div class="dir-name">Leonardo Mora</div>
         <div class="dir-rol">Directivo</div>
-        <div class="dir-bio">Descripción próximamente…</div>
+        <div class="dir-bio">Amante de los nuevos comienzos, de la estética limpia y de los procesos de cambio; por eso me dedico al mundo de la belleza y la barbería. Fuera de cualquier rol, me considero alguien que disfruta crear conexiones reales, escuchar y apoyar en lo que se necesite.</div>
       </div>
     </div>
   </div>
@@ -575,44 +577,65 @@ footer { background:#040912; border-top:3px solid var(--gold); padding:36px 20px
       <button class="copa-tab active" onclick="copaTab(this,'j1')">Jornada 1</button>
       <button class="copa-tab" onclick="copaTab(this,'j2')">Jornada 2</button>
       <button class="copa-tab" onclick="copaTab(this,'j3')">Jornada 3</button>
+      <button class="copa-tab" onclick="copaTab(this,'j4')">Jornada 4</button>
     </div>
 
     <div class="copa-jornada visible" id="copa-j1">
       <div class="copa-jornada-label">⚽ Jornada 1</div>
       <div class="copa-grid">
-        <div class="copa-foto"><img src="copa-01.jpg" alt="Jornada 1" onclick="openLightbox(this.src)"></div>
-        <div class="copa-foto"><img src="copa-02.jpeg" alt="Jornada 1" onclick="openLightbox(this.src)"></div>
-        <div class="copa-foto"><img src="copa-03.jpeg" alt="Jornada 1" onclick="openLightbox(this.src)"></div>
-        <div class="copa-foto"><img src="copa-04.jpeg" alt="Jornada 1" onclick="openLightbox(this.src)"></div>
-        <div class="copa-foto"><img src="copa-05.jpeg" alt="Jornada 1" onclick="openLightbox(this.src)"></div>
-        <div class="copa-foto"><img src="copa-21.jpeg" alt="Jornada 1" onclick="openLightbox(this.src)"></div>
+        <div class="copa-foto"><img src="fotos/copa-del-orgullo/copa-01.jpg" alt="Jornada 1" onclick="openLightbox(this.src)"></div>
+        <div class="copa-foto"><img src="fotos/copa-del-orgullo/copa-02.jpeg" alt="Jornada 1" onclick="openLightbox(this.src)"></div>
+        <div class="copa-foto"><img src="fotos/copa-del-orgullo/copa-03.jpeg" alt="Jornada 1" onclick="openLightbox(this.src)"></div>
+        <div class="copa-foto"><img src="fotos/copa-del-orgullo/copa-04.jpeg" alt="Jornada 1" onclick="openLightbox(this.src)"></div>
+        <div class="copa-foto"><img src="fotos/copa-del-orgullo/copa-05.jpeg" alt="Jornada 1" onclick="openLightbox(this.src)"></div>
+        <div class="copa-foto"><img src="fotos/copa-del-orgullo/copa-21.jpeg" alt="Jornada 1" onclick="openLightbox(this.src)"></div>
       </div>
     </div>
 
     <div class="copa-jornada" id="copa-j2">
       <div class="copa-jornada-label">⚽ Jornada 2</div>
       <div class="copa-grid">
-        <div class="copa-foto"><img src="copa-06.jpeg" alt="Jornada 2" onclick="openLightbox(this.src)"></div>
-        <div class="copa-foto"><img src="copa-07.jpeg" alt="Jornada 2" onclick="openLightbox(this.src)"></div>
-        <div class="copa-foto"><img src="copa-08.jpeg" alt="Jornada 2" onclick="openLightbox(this.src)"></div>
-        <div class="copa-foto"><img src="copa-09.jpeg" alt="Jornada 2" onclick="openLightbox(this.src)"></div>
-        <div class="copa-foto"><img src="copa-10.jpeg" alt="Jornada 2" onclick="openLightbox(this.src)"></div>
-        <div class="copa-foto"><img src="copa-11.jpeg" alt="Jornada 2" onclick="openLightbox(this.src)"></div>
-        <div class="copa-foto"><img src="copa-12.jpeg" alt="Jornada 2" onclick="openLightbox(this.src)"></div>
-        <div class="copa-foto"><img src="copa-13.jpeg" alt="Jornada 2" onclick="openLightbox(this.src)"></div>
+        <div class="copa-foto"><img src="fotos/copa-del-orgullo/copa-06.jpeg" alt="Jornada 2" onclick="openLightbox(this.src)"></div>
+        <div class="copa-foto"><img src="fotos/copa-del-orgullo/copa-07.jpeg" alt="Jornada 2" onclick="openLightbox(this.src)"></div>
+        <div class="copa-foto"><img src="fotos/copa-del-orgullo/copa-08.jpeg" alt="Jornada 2" onclick="openLightbox(this.src)"></div>
+        <div class="copa-foto"><img src="fotos/copa-del-orgullo/copa-09.jpeg" alt="Jornada 2" onclick="openLightbox(this.src)"></div>
+        <div class="copa-foto"><img src="fotos/copa-del-orgullo/copa-10.jpeg" alt="Jornada 2" onclick="openLightbox(this.src)"></div>
+        <div class="copa-foto"><img src="fotos/copa-del-orgullo/copa-11.jpeg" alt="Jornada 2" onclick="openLightbox(this.src)"></div>
+        <div class="copa-foto"><img src="fotos/copa-del-orgullo/copa-12.jpeg" alt="Jornada 2" onclick="openLightbox(this.src)"></div>
+        <div class="copa-foto"><img src="fotos/copa-del-orgullo/copa-13.jpeg" alt="Jornada 2" onclick="openLightbox(this.src)"></div>
       </div>
     </div>
 
     <div class="copa-jornada" id="copa-j3">
       <div class="copa-jornada-label">⚽ Jornada 3</div>
       <div class="copa-grid">
-        <div class="copa-foto"><img src="copa-14.jpeg" alt="Jornada 3" onclick="openLightbox(this.src)"></div>
-        <div class="copa-foto"><img src="copa-15.jpeg" alt="Jornada 3" onclick="openLightbox(this.src)"></div>
-        <div class="copa-foto"><img src="copa-16.jpeg" alt="Jornada 3" onclick="openLightbox(this.src)"></div>
-        <div class="copa-foto"><img src="copa-17.jpeg" alt="Jornada 3" onclick="openLightbox(this.src)"></div>
-        <div class="copa-foto"><img src="copa-18.jpeg" alt="Jornada 3" onclick="openLightbox(this.src)"></div>
-        <div class="copa-foto"><img src="copa-19.jpeg" alt="Jornada 3" onclick="openLightbox(this.src)"></div>
-        <div class="copa-foto"><img src="copa-20.jpeg" alt="Jornada 3" onclick="openLightbox(this.src)"></div>
+        <div class="copa-foto"><img src="fotos/copa-del-orgullo/copa-14.jpeg" alt="Jornada 3" onclick="openLightbox(this.src)"></div>
+        <div class="copa-foto"><img src="fotos/copa-del-orgullo/copa-15.jpeg" alt="Jornada 3" onclick="openLightbox(this.src)"></div>
+        <div class="copa-foto"><img src="fotos/copa-del-orgullo/copa-16.jpeg" alt="Jornada 3" onclick="openLightbox(this.src)"></div>
+        <div class="copa-foto"><img src="fotos/copa-del-orgullo/copa-17.jpeg" alt="Jornada 3" onclick="openLightbox(this.src)"></div>
+        <div class="copa-foto"><img src="fotos/copa-del-orgullo/copa-18.jpeg" alt="Jornada 3" onclick="openLightbox(this.src)"></div>
+        <div class="copa-foto"><img src="fotos/copa-del-orgullo/copa-19.jpeg" alt="Jornada 3" onclick="openLightbox(this.src)"></div>
+        <div class="copa-foto"><img src="fotos/copa-del-orgullo/copa-20.jpeg" alt="Jornada 3" onclick="openLightbox(this.src)"></div>
+      </div>
+    </div>
+
+    <div class="copa-jornada" id="copa-j4">
+      <div class="copa-jornada-label">⚽ Jornada 4</div>
+      <div class="copa-grid">
+        <div class="copa-foto"><img src="fotos/copa-del-orgullo/copa-22.jpeg" alt="Jornada 4" onclick="openLightbox(this.src)"></div>
+        <div class="copa-foto"><img src="fotos/copa-del-orgullo/copa-23.jpeg" alt="Jornada 4" onclick="openLightbox(this.src)"></div>
+        <div class="copa-foto"><img src="fotos/copa-del-orgullo/copa-24.jpeg" alt="Jornada 4" onclick="openLightbox(this.src)"></div>
+        <div class="copa-foto"><img src="fotos/copa-del-orgullo/copa-25.jpeg" alt="Jornada 4" onclick="openLightbox(this.src)"></div>
+        <div class="copa-foto"><img src="fotos/copa-del-orgullo/copa-26.jpeg" alt="Jornada 4" onclick="openLightbox(this.src)"></div>
+        <div class="copa-foto"><img src="fotos/copa-del-orgullo/copa-27.jpeg" alt="Jornada 4" onclick="openLightbox(this.src)"></div>
+        <div class="copa-foto"><img src="fotos/copa-del-orgullo/copa-28.jpeg" alt="Jornada 4" onclick="openLightbox(this.src)"></div>
+        <div class="copa-foto"><img src="fotos/copa-del-orgullo/copa-29.jpeg" alt="Jornada 4" onclick="openLightbox(this.src)"></div>
+        <div class="copa-foto"><img src="fotos/copa-del-orgullo/copa-30.jpeg" alt="Jornada 4" onclick="openLightbox(this.src)"></div>
+        <div class="copa-foto"><img src="fotos/copa-del-orgullo/copa-31.jpeg" alt="Jornada 4" onclick="openLightbox(this.src)"></div>
+        <div class="copa-foto"><img src="fotos/copa-del-orgullo/copa-32.jpeg" alt="Jornada 4" onclick="openLightbox(this.src)"></div>
+        <div class="copa-foto"><img src="fotos/copa-del-orgullo/copa-33.jpeg" alt="Jornada 4" onclick="openLightbox(this.src)"></div>
+        <div class="copa-foto"><img src="fotos/copa-del-orgullo/copa-34.jpeg" alt="Jornada 4" onclick="openLightbox(this.src)"></div>
+        <div class="copa-foto"><img src="fotos/copa-del-orgullo/copa-35.jpeg" alt="Jornada 4" onclick="openLightbox(this.src)"></div>
       </div>
     </div>
   </div>
@@ -1226,6 +1249,11 @@ document.addEventListener('DOMContentLoaded', () => {
     el.addEventListener('dragstart', e => e.preventDefault());
   });
   document.getElementById('lightbox').addEventListener('contextmenu', e => e.preventDefault());
+
+  // Click para ampliar fotos del equipo
+  document.querySelectorAll('.foto-ampliable').forEach(img => {
+    img.addEventListener('click', () => openLightbox(img.src));
+  });
 
   document.addEventListener('click', e => {
     const foto = e.target.closest('.copa-foto');
